@@ -30,8 +30,27 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'sphinx.ext.napoleon'
+ extensions = [
+    'sphinx.ext.autodoc',         # Automatically document Python modules
+    'sphinx.ext.viewcode',        # Add links to the source code
+    'sphinx.ext.napoleon',        # Support for Google and NumPy style docstrings
+    'sphinx_rtd_theme',           # Read the Docs theme
+    'sphinx.ext.intersphinx',     # Link to other Sphinx documentation
+    'sphinx.ext.todo',            # Support for TODOs
+    'sphinx.ext.imgconverter',     # Convert images during the build process
+    'sphinx.ext.extlinks',        # Create links to external sites
+    'sphinx.ext.mathjax',         # For rendering LaTeX math
+    'sphinx.ext.githubpages',     # Enable GitHub Pages support
+    'sphinx.ext.ifconfig',        # Conditional inclusion of content based on configuration
+    'sphinx.ext.coverage',        # Generate coverage reports for your documentation
+    'sphinx.ext.imgconverter',     # Convert images to other formats if needed
+    'sphinx.ext.autosummary',     # Automatically generate summary tables for modules
+    'sphinx.ext.todo',            # Include TODOs in the documentation
+    'sphinx.ext.extlinks',        # Easily create links to external resources
+    'sphinx.ext.graphviz',        # Add Graphviz support for creating diagrams
+    'sphinx.ext.redoc',           # ReDoc integration for API documentation
 ]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
