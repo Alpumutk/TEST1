@@ -34,7 +34,6 @@ extensions = [
     'sphinx.ext.autodoc',         # Automatically document Python modules
     'sphinx.ext.viewcode',        # Add links to the source code
     'sphinx.ext.napoleon',        # Support for Google and NumPy style docstrings
-    'sphinx_rtd_theme',           # Read the Docs theme
     'sphinx.ext.intersphinx',     # Link to other Sphinx documentation
     'sphinx.ext.todo',            # Support for TODOs
     'sphinx.ext.imgconverter',     # Convert images during the build process
