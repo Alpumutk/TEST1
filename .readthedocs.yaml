@@ -1,25 +1,14 @@
-# .readthedocs.yaml
-version: 2
+   version: 2
 
-# Build environment settings
-python:
-  version: 3.9  # Specify the Python version
-  install:
-    - requirements: requirements.txt  # Ensure you have a requirements.txt
-    - method: pip
-      path: .  # Install your project
+   build:
+      os: ubuntu-24.04
+      tools:
+         python: "3"
 
-# Specify the configuration file for Sphinx
-sphinx:
-  configuration: docs/conf.py  # Path to your Sphinx conf.py file
+   sphinx:
+      configuration: docs/conf.py
 
-# Optional: Define the paths for your source files
-# Note: Change the source directory if it's different
-paths:
-  - docs  # Path where your .rst files are located
-
-# Optional: Define the build settings
-build:
-  os: ubuntu-20.04  # Use a specific OS version
-  tools:
-    python: "3.9"  # Python version for building
+   python:
+      install:
+         - requirements: requirements.txt
+         
