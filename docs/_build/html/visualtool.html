@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>visualtool module &#8212; VASP K-Point Visualizer Tool 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Visualizer Tool" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-visualtool">
+<span id="visualtool-module"></span><h1>visualtool module<a class="headerlink" href="#module-visualtool" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.Dielectric">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">Dielectric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans_df_cut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Enmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Enmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpoint_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GRID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scissor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SOC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FALSE'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#Dielectric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.Dielectric" title="Link to this definition">¶</a></dt>
+<dd><p>This function modifies the trans_df according to user inputted range on bands, kpoints and energies. It calculates imaginary dielectric spectrum and energy in this range and in a grid determined by user input values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trans_df_cut</strong> – Dataframe with transmatrix values</p></li>
+<li><p><strong>Enmin</strong> – Minimum energy value of the calculated dielectric spectrum</p></li>
+<li><p><strong>Enmax</strong> – Maximum energy value of the calculated dielectric spectrum</p></li>
+<li><p><strong>kpoint_number</strong> – Number of k-points</p></li>
+<li><p><strong>Volume</strong> – Volume in reciprocal space</p></li>
+<li><p><strong>sigma</strong> – Width of smearing (eV)</p></li>
+<li><p><strong>GRID</strong> – Number of grid points in calculated dielectric spectrum</p></li>
+<li><p><strong>scissor</strong> – Scissor correction for the bandgap</p></li>
+<li><p><strong>SOC</strong> – Option for enabling spin-orbit coupling</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return Energy<span class="colon">:</span></dt>
+<dd class="field-even"><p>List with energy values</p>
+</dd>
+<dt class="field-odd">Return tot_curve_ave<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List with dielectric spectrum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.Initialize">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">Initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outcarfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Enmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Enmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbandmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbandmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vbandmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vbandmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">klist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#Initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.Initialize" title="Link to this definition">¶</a></dt>
+<dd><p>This function needs to be run once to initialize data, which modifies the input transmatrix dataframe to include coordinates and kpoints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>outcarfile</strong> – Path of outcar file</p></li>
+<li><p><strong>trans_df</strong> – Dataframe with transmatrix values</p></li>
+<li><p><strong>cbandmin</strong> – Minimum conduction band value to cut the transmatrix by</p></li>
+<li><p><strong>cbandmax</strong> – Maximum conduction band value to cut the transmatrix by</p></li>
+<li><p><strong>vbandmin</strong> – Minimum valence band value to cut the transmatrix by</p></li>
+<li><p><strong>vbandmax</strong> – Maximum valence band value to cut the transmatrix by</p></li>
+<li><p><strong>klist</strong> – A list of k-points to cut the transmatrix by</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Modified dataframe with transmatrix values</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dataframe with positions of k-points</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Band number of the valence band maximum</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of k-points</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of bands</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.Interactiveplot">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">Interactiveplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr_emin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr_emax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr_deltaE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltaE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#Interactiveplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.Interactiveplot" title="Link to this definition">¶</a></dt>
+<dd><p>This function creates an interactive plot for transition energies selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trans_df</strong> – Dataframe with transmatrix values</p></li>
+<li><p><strong>tr_emin</strong> – Minimum transition energy value to cut the transmatrix by</p></li>
+<li><p><strong>tr_emax</strong> – Maximum transition energy value to cut the transmatrix by</p></li>
+<li><p><strong>tr_deltaE</strong> – Energy step size (in units eV) of the interactive slider.</p></li>
+<li><p><strong>deltaE</strong> – Determines the range of transition energies(E-deltaE, E+deltaE)  to be considered</p></li>
+<li><p><strong>option</strong> – When set to ‘yes’, sums all of the transition probabilities for a given k-point</p></li>
+<li><p><strong>cbandmin</strong> – Minimum conduction band value to cut the transmatrix by</p></li>
+<li><p><strong>cbandmax</strong> – Maximum conduction band value to cut the transmatrix by</p></li>
+<li><p><strong>vbandmin</strong> – Minimum valence band value to cut the transmatrix by</p></li>
+<li><p><strong>vbandmax</strong> – Maximum valence band value to cut the transmatrix by</p></li>
+<li><p><strong>kmin</strong> – Minimum k-point value to cut the transmatrix by</p></li>
+<li><p><strong>kmax</strong> – Maximum k-point value to cut the transmatrix by</p></li>
+<li><p><strong>kpt_number</strong> – Number of k-points</p></li>
+<li><p><strong>k_df</strong> – Dataframe with positions of k-points</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.Plot">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">Plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans_df_plot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#Plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.Plot" title="Link to this definition">¶</a></dt>
+<dd><p>This function plots the modified dataframe from RunTransition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trans_df_plot</strong> – modified transmatrix dataframe for plotting</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>figure output for plotting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.PlotDielectric">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">PlotDielectric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Energy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tot_curve_ave</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#PlotDielectric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.PlotDielectric" title="Link to this definition">¶</a></dt>
+<dd><p>This function plots the dielectric spectrum vs. energy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Energy</strong> – List with energy values</p></li>
+<li><p><strong>tot_curve_ave</strong> – List with dielectric spectrum</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.RunTransition">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">RunTransition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltaE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#RunTransition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.RunTransition" title="Link to this definition">¶</a></dt>
+<dd><p>This function transforms the trans_df such that only transitions within an energy range of (E-deltaE, E+deltaE) are considered. Transition probabilities are calculated for each transition and added to trans_df.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trans_df</strong> – Dataframe with transmatrix values</p></li>
+<li><p><strong>ev</strong> – Transition energy value to cut the transmatrix by</p></li>
+<li><p><strong>deltaE</strong> – Determines the range of transition energies(E-deltaE, E+deltaE)  to be considered</p></li>
+<li><p><strong>option</strong> – When set to ‘yes’, sums all of the transition probabilities for a given k-point</p></li>
+<li><p><strong>kpt_number</strong> – Number of k-points</p></li>
+<li><p><strong>k_df</strong> – Dataframe with positions of k-points</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Modified transmatrix dataframe for plotting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="visualtool.Transmatrix">
+<span class="sig-prename descclassname"><span class="pre">visualtool.</span></span><span class="sig-name descname"><span class="pre">Transmatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transmatrix_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/visualtool.html#Transmatrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#visualtool.Transmatrix" title="Link to this definition">¶</a></dt>
+<dd><p>Reads in transmatrix file and creates dataframe with values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>transmatrix_file</strong> – Path of transmatrix file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataframe with transmatrix values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">VASP K-Point Visualizer Tool</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Visualizer Tool</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">visualtool module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Visualizer Tool</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">Visualizer Tool</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Alp Kurbay, Brian Robinson, Andre Schleife.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/visualtool.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

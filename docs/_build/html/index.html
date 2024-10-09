@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to VASP K-Point Visualizer Tool’s documentation! &#8212; VASP K-Point Visualizer Tool 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualizer Tool" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-vasp-k-point-visualizer-tool-s-documentation">
+<h1>Welcome to VASP K-Point Visualizer Tool’s documentation!<a class="headerlink" href="#welcome-to-vasp-k-point-visualizer-tool-s-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Visualizer Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualtool.html">visualtool module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="description">
+<h1>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h1>
+<p>The purpose of the VASP k-point visualizer tool is to create an interactive
+three-dimensional reciprocal space plot which displays the k-points in the first Brillouin
+zone or paths within it. The tool also displays information about transitions within the
+electronic band structure at each k-point depending on the user-inputted transition
+energy value within a desired range of error, in units of eV. The plot will alter the size
+and color of the k-point if there is a probability of a transition occurring, and display
+information about the occupied and unoccupied bands in which the transition occurs.
+The Γ point on the plot is located at (0.5, 0.5, 0.5). The tool requires the OUTCAR and
+Transmatrix files from VASP as inputs.</p>
+</section>
+<section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>The tool requires Python 3, as well as the following libraries:
+<strong>numpy</strong>,
+<strong>pandas</strong>,
+<strong>ipywidgets</strong>,
+<strong>Plotly</strong></p>
+</section>
+<section id="input-file-type">
+<h1>Input File Type<a class="headerlink" href="#input-file-type" title="Link to this heading">¶</a></h1>
+<p>OUTCAR file should be in the standard form of output from VASP.</p>
+<p>Transmatrix file should be in the following format, with blanks as spacing and not including headers:
+<strong>K_weight</strong> <strong>Conduction_Band</strong> <strong>Valence_Band</strong> <strong>Energy_of_Conduction_Band</strong> <strong>Energy_of_Valence_Band</strong> <strong>P_X(Real)</strong> <strong>P_X(Imaginary)</strong> <strong>P_Y(Real)</strong> <strong>P_Y(Imaginary)</strong> <strong>P_Z(Real)</strong> <strong>P_Z(Imaginary)</strong> <strong>Occupation</strong></p>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<p>The functions in the tool should be run in the following order:
+<strong>Transmatrix</strong> (once),
+<strong>Initialize</strong> (once),
+<strong>Dielectric</strong>,
+<strong>PlotDielectric</strong>,
+<strong>Interactiveplot</strong></p>
+</section>
+<section id="example-output">
+<h1>Example Output<a class="headerlink" href="#example-output" title="Link to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="_images/picture.png"><img alt="alternate text" class="align-center" src="_images/picture.png" style="width: 538.0px; height: 475.0px;" /></a>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">VASP K-Point Visualizer Tool</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Visualizer Tool</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="modules.html" title="next chapter">Visualizer Tool</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Alp Kurbay, Brian Robinson, Andre Schleife.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
