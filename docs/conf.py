@@ -48,7 +48,6 @@ extensions = [
     'sphinx.ext.todo',            # Include TODOs in the documentation
     'sphinx.ext.extlinks',        # Easily create links to external resources
     'sphinx.ext.graphviz',        # Add Graphviz support for creating diagrams
-    'sphinx.ext.redoc',           # ReDoc integration for API documentation
 ]
 
 
