@@ -30,7 +30,7 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
- extensions = [
+extensions = [
     'sphinx.ext.autodoc',         # Automatically document Python modules
     'sphinx.ext.viewcode',        # Add links to the source code
     'sphinx.ext.napoleon',        # Support for Google and NumPy style docstrings
