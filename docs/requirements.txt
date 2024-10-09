@@ -2,4 +2,5 @@ sphinx_rtd_theme
 numpy
 pandas
 ipywidgets
+matplotlib
 plotly
