@@ -11,6 +11,7 @@ Welcome to VASP K-Point Visualizer Tool's documentation!
    :caption: Contents:
 
    modules
+
 Description
 ===========
 The purpose of the VASP k-point visualizer tool is to create an interactive
