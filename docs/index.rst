@@ -19,15 +19,14 @@ three-dimensional reciprocal space plot which displays the k-points in the first
 zone or paths within it. The tool also displays information about transitions within the
 electronic band structure at each k-point depending on the user-inputted transition
 energy value within a desired range of error, in units of eV. The plot will alter the size
-and color of the k-point if there is a probability of a transition occurring, and display
-information about the occupied and unoccupied bands in which the transition occurs.
-The Γ point on the plot is located at (0.5, 0.5, 0.5). The tool requires the OUTCAR and
-Transmatrix files from VASP as inputs.
+and color of the k-point depending on the oscillator strength, and display
+information about the occupied and unoccupied bands in which the transition occurs. The Γ point on the plot is located at (0.5, 0.5, 0.5). Furthermore, the tool can calculate the imaginary dielectric function ε₂ to help understand where the features in the spectra are coming from in the Brillouin zone. The tool is highly customizable and can be run with a specific range of k-points, bands, and transition energies. The tool requires the OUTCAR and Transmatrix files from VASP as inputs.
 
 Installation
 ============
 The tool requires Python 3, as well as the following libraries:
 **numpy**,
+**matplotlib**,
 **pandas**,
 **ipywidgets**,
 **Plotly**
