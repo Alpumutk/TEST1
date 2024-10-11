@@ -50,7 +50,7 @@ The functions in the tool should be run in the following order:
 
 Example Output
 ==============
-.. image:: ../maths/picture.png
+.. image:: ../maths/picture2.png
    :width: 538px
    :height: 475px
    :scale: 100 %
