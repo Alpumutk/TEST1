@@ -201,7 +201,7 @@ def Plot(trans_df_plot,max_prob):
     """This function plots the modified dataframe from RunTransition.
     
     :param trans_df_plot: modified transmatrix dataframe for plotting
-    ::param max_prob: Maximum oscillator strength 
+    :param max_prob: Maximum oscillator strength 
     :return: figure output for plotting
     """
     label = [] #list that will contain the displayed hovertext information
