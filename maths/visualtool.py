@@ -21,7 +21,7 @@ def Transmatrix(transmatrix_file):
     """Reads in transmatrix file and creates dataframe with values.
     
     :param transmatrix_file: Path of transmatrix file
-    :return: Dataframe with transmatrix values
+    :return trans_df: Dataframe with transmatrix values
     """
     
     trans_df = pd.read_csv(transmatrix_file,delim_whitespace=True,names = ['kweight','cband','vband','Ec','Ev','px','ipx','py','ipy','pz','ipz','occ'])
@@ -38,11 +38,11 @@ def Initialize(outcarfile, trans_df, Enmin, Enmax, cbandmin, cbandmax,vbandmin,v
     :param vbandmin: Minimum valence band value to cut the transmatrix by
     :param vbandmax: Maximum valence band value to cut the transmatrix by
     :param klist: A list of k-points to cut the transmatrix by
-    :return: Modified dataframe with transmatrix values
-    :return: Dataframe with positions of k-points 
-    :return: Band number of the valence band maximum
-    :return: Number of k-points
-    :return: Number of bands
+    :return trans_df_cut: Modified dataframe with transmatrix values
+    :return k_df: Dataframe with positions of k-points 
+    :return VBM: Band number of the valence band maximum
+    :return kpoint_number: Number of k-points
+    :return band_number: Number of bands
     """
     trans_df['Ediff'] = trans_df['Ec']-trans_df['Ev'] #creates a column that contains the energy difference between the conduction and valence bands
     with open(outcarfile) as f: #open OUTCAR file
@@ -82,8 +82,8 @@ def Dielectric(trans_df_cut, Enmin, Enmax, kpoint_number, Volume = 200.0, sigma 
     :param Enmin: Minimum energy value of the calculated dielectric spectrum
     :param Enmax: Maximum energy value of the calculated dielectric spectrum
     :param kpoint_number: Number of k-points
-    :param Volume:
-    :param sigma:
+    :param Volume: Volume in reciprocal space
+    :param sigma: Width of smearing
     :param GRID: Number of grid points in calculated dielectric spectrum
     :param scissor: Scissor correction for the bandgap
     :param SOC: Option for enabling spin-orbit coupling
@@ -165,8 +165,8 @@ def RunTransition(trans_df, ev,deltaE, option, kpt_number, k_df):
     :param option: When set to 'yes', sums all of the transition probabilities for a given k-point
     :param kpt_number: Number of k-points
     :param k_df: Dataframe with positions of k-points 
-    :return: Modified transmatrix dataframe for plotting
-    :return: Maximum oscillator strength for plotting
+    :return trans_df_plot: Modified transmatrix dataframe for plotting
+    :return max_prob: Maximum oscillator strength for plotting
     """
   
     max_prob = max(trans_df['prob']) #calculate the maximum oscillator strength in the transmatrix for plotting purposes
