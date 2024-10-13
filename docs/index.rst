@@ -10,6 +10,7 @@ Welcome to VASP K-Point Visualizer Tool's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   modules 
 
 Description
 ===========
