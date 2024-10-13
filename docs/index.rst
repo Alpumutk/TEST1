@@ -36,6 +36,7 @@ Input File Type
 OUTCAR file should be in the standard form of output from VASP.
 
 Transmatrix file should be in the following format, with blanks as spacing and not including headers:
+
 **K_weight** **Conduction_Band** **Valence_Band** **Energy_of_Conduction_Band** **Energy_of_Valence_Band** **P_X(Real)** **P_X(Imaginary)** **P_Y(Real)** **P_Y(Imaginary)** **P_Z(Real)** **P_Z(Imaginary)** **Occupation**
 
 
