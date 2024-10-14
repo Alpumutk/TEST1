@@ -24,13 +24,16 @@ author = 'Alp Kurbay, Brian Robinson, Andre Schleife'
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
+# Build PDF & ePub
+formats:
+  - epub
+  - pdf
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-formats: all
 
 extensions = [
     'sphinx.ext.autodoc',         # Automatically document Python modules
